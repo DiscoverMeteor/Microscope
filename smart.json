@@ -4,6 +4,7 @@
     "branch": "master"
   },
   "packages": {
-    "bootstrap-updated": {}
+    "bootstrap-updated": {},
+    "router": {}
   }
 }
