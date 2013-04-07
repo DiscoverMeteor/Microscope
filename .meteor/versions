@@ -29,6 +29,7 @@ meteor-platform@1.1.2
 meteor@1.1.2
 minifiers@1.1.1
 minimongo@1.0.4
+mizzao:bootstrap-3@3.2.0_1
 mobile-status-bar@1.0.1
 mongo@1.0.7
 observe-sequence@1.0.3
