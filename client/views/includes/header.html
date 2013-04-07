@@ -9,7 +9,7 @@
       <a class="brand" href="{{postsListPath}}">Microscope</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li><a href="{{postSubmitPath}}">New</a></li>
+          {{#if currentUser}}<li><a href="{{postSubmitPath}}">Submit Post</a></li>{{/if}}
         </ul>
         <ul class="nav pull-right">
           <li>{{loginButtons}}</li>
