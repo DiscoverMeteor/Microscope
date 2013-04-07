@@ -1,0 +1,19 @@
+{
+  "meteor": {
+    "git": "https://github.com/meteor/meteor.git",
+    "branch": "master",
+    "commit": "cab491f3650fffc85661bca6b3cecf583410e05d"
+  },
+  "dependencies": {
+    "basePackages": {
+      "bootstrap-updated": {}
+    },
+    "packages": {
+      "bootstrap-updated": {
+        "git": "https://github.com/Charuru/bootstrap-updated.git",
+        "tag": "v1.0.1",
+        "commit": "bdd5fcc8e134e62bcbb9d11aad8270534ffb6493"
+      }
+    }
+  }
+}
