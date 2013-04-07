@@ -6,3 +6,6 @@
 autopublish
 insecure
 standard-app-packages
+twbs:bootstrap
+underscore
+
