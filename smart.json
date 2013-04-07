@@ -5,6 +5,7 @@
   },
   "packages": {
     "bootstrap-updated": {},
-    "router": {}
+    "router": {},
+    "accounts-ui-bootstrap-dropdown": {}
   }
 }

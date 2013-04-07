@@ -7,7 +7,8 @@
   "dependencies": {
     "basePackages": {
       "bootstrap-updated": {},
-      "router": {}
+      "router": {},
+      "accounts-ui-bootstrap-dropdown": {}
     },
     "packages": {
       "bootstrap-updated": {
@@ -19,6 +20,11 @@
         "git": "https://github.com/tmeasday/meteor-router.git",
         "tag": "v0.5.0",
         "commit": "b1ee74c816d1fc63b713139158075feb8a0c6d26"
+      },
+      "accounts-ui-bootstrap-dropdown": {
+        "git": "https://github.com/erobit/meteor-accounts-ui-bootstrap-dropdown.git",
+        "tag": "v0.1.0",
+        "commit": "e66558aaa4dc0d85c6ddb63bd2289b38c2b793f6"
       },
       "page-js-ie-support": {
         "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",
