@@ -1,5 +1,7 @@
 Meteor.Router.add({
-  '/': 'postsList',
+  '/': {to: 'newPosts', as: 'home'},
+  '/best': 'bestPosts',
+  '/new': 'newPosts',
   
   '/posts/:_id': {
     to: 'postPage', 
