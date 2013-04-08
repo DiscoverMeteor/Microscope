@@ -4,6 +4,9 @@
       <a class="brand" href="/">Microscope</a>
       <ul class="nav">
         {{#if currentUser}}<li><a href="/submit">Submit Post</a></li>{{/if}}
+        <li class="dropdown">
+          {{> notifications}}
+        </li>
       </ul>
       <ul class="nav pull-right">
         <li>{{loginButtons}}</li>
