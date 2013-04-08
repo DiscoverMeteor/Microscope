@@ -2,6 +2,7 @@
   "packages": {
     "router": {},
     "accounts-ui-bootstrap-dropdown": {},
-    "spin": {}
+    "spin": {},
+    "paginated-subscription": {}
   }
 }
