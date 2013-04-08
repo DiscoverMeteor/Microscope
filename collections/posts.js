@@ -1,5 +1,11 @@
 Posts = new Meteor.Collection('posts');
 
+Posts.allow({
+  update: ownsDocument,
+  remove: ownsDocument
+});
+
+
 Meteor.methods({
   post: function(postAttributes) {
     var user = Meteor.user(),
