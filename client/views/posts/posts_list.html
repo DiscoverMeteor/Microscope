@@ -3,5 +3,13 @@
     {{#each posts}}
       {{> postItem}}
     {{/each}}
+    
+    {{#if postsReady}}
+      {{#unless allPostsLoaded}}
+    		<a class="load-more" href="#">Load more</a>
+      {{/unless}}
+    {{else}}
+      <div>{{> spinner}}</div>
+    {{/if}}
   </div>
 </template>
