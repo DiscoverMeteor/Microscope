@@ -3,7 +3,17 @@
     <div class="navbar-inner">
       <a class="brand" href="/">Microscope</a>
       <ul class="nav">
-        {{#if currentUser}}<li><a href="/submit">Submit Post</a></li>{{/if}}
+        <li class="{{activeRouteClass 'home' 'newPosts'}}">
+          <a href="{{homePath}}">New</a>
+        </li>
+        <li class="{{activeRouteClass  'bestPosts'}}">
+          <a href="{{bestPostsPath}}">Best</a>
+        </li>
+        {{#if currentUser}}
+          <li class="{{activeRouteClass 'postSubmit'}}">
+            <a href="/submit">Submit Post</a>
+          </li>
+        {{/if}}
         <li class="dropdown">
           {{> notifications}}
         </li>
