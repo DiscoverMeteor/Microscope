@@ -1,2 +1,5 @@
 Meteor.subscribe('posts');
-Meteor.subscribe('comments');
+
+Deps.autorun(function() {
+  Meteor.subscribe('comments', Session.get('currentPostId'));
+});
