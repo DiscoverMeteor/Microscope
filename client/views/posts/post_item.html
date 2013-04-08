@@ -4,9 +4,9 @@
     <div class="post-content">
       <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
       <p>
-        {{votes}} Votes,
+        {{pluralize votes "Vote"}},
         submitted by {{author}},
-        <a href="{{postPagePath this}}">{{commentsCount}} comments</a>
+        <a href="{{postPagePath this}}">{{pluralize commentsCount "comment"}}</a>
         {{#if ownPost}}<a href="{{postEditPath this}}">Edit</a>{{/if}}
       </p>
     </div>
