@@ -15,3 +15,10 @@ Package.onUse(function (api, where) {
   if (api.export)
     api.export('Errors');
 });
+
+Package.onTest(function(api) {
+  api.use('tmeasday:errors', 'client');
+  api.use(['tinytest', 'test-helpers', 'templating'], 'client');
+  
+  api.addFiles('errors_tests.js', 'client');
+});
