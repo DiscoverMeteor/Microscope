@@ -80,7 +80,7 @@ standard-minifiers@1.0.1
 stylus@2.511.0_2
 templating@1.1.4
 templating-tools@1.0.0
-tmeasday:errors@1.0.0
+tmeasday:errors@2.0.0
 tracker@1.0.9
 twbs:bootstrap@3.3.5
 ui@1.0.8
