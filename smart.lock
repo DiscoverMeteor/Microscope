@@ -8,7 +8,8 @@
     "basePackages": {
       "router": {},
       "accounts-ui-bootstrap-dropdown": {},
-      "spin": {}
+      "spin": {},
+      "errors": {}
     },
     "packages": {
       "router": {
@@ -25,6 +26,11 @@
         "git": "https://github.com/SachaG/meteor-spin.git",
         "tag": "v0.2.0",
         "commit": "fd3a2871a69442848b4b4e74f5e1ae28fa4a95a4"
+      },
+      "errors": {
+        "git": "https://github.com/tmeasday/meteor-errors.git",
+        "tag": "v0.1.0",
+        "commit": "b91859cd98d69f5b294d7d7a2724427872103da8"
       },
       "page-js-ie-support": {
         "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",
