@@ -2,14 +2,15 @@
   "meteor": {
     "git": "https://github.com/meteor/meteor.git",
     "branch": "master",
-    "commit": "cab491f3650fffc85661bca6b3cecf583410e05d"
+    "commit": "0ffea1c4c308ed24906984f99b13b8fca5a0956c"
   },
   "dependencies": {
     "basePackages": {
       "bootstrap-updated": {},
       "router": {},
       "accounts-ui-bootstrap-dropdown": {},
-      "spin": {}
+      "spin": {},
+      "errors": {}
     },
     "packages": {
       "bootstrap-updated": {
@@ -31,6 +32,11 @@
         "git": "https://github.com/sachag/meteor-spin.git",
         "tag": "v0.1.0",
         "commit": "20fc543866f9271f80006cbed31e4ccbadf29838"
+      },
+      "errors": {
+        "git": "https://github.com/tmeasday/meteor-errors.git",
+        "tag": "v0.1.0",
+        "commit": "b91859cd98d69f5b294d7d7a2724427872103da8"
       },
       "page-js-ie-support": {
         "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",
