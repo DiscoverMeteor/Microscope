@@ -56,6 +56,7 @@ mobile-experience@1.0.1
 mobile-status-bar@1.0.6
 mongo@1.1.2
 mongo-id@1.0.1
+mongo-livedata@1.0.9
 npm-bcrypt@0.7.8_2
 npm-mongo@1.4.39_1
 observe-sequence@1.0.7
@@ -79,6 +80,7 @@ standard-minifiers@1.0.1
 stylus@2.511.0_2
 templating@1.1.4
 templating-tools@1.0.0
+tmeasday:errors@1.0.0
 tracker@1.0.9
 twbs:bootstrap@3.3.5
 ui@1.0.8
