@@ -11,7 +11,7 @@ Template.postSubmit.events({
     Meteor.call('post', post, function(error, id) {
       if (error) {
         // display the error to the user
-        throwError(error.reason);
+        Meteor.Errors.throw(error.reason);
         
         // if the error is that the post already exists, take us there
         if (error.error === 302)
