@@ -11,8 +11,7 @@ Template.postSubmit.events({
     Meteor.call('post', post, function(error, id) {
       if (error)
         return alert(error.reason);
-        
-      Meteor.Router.to('postPage', id);
     });
+    Meteor.Router.to('postsList');
   }
 });
