@@ -16,6 +16,14 @@ htmljs@1.0.4
 http@1.1.0
 id-map@1.0.3
 insecure@1.0.3
+iron:controller@1.0.7
+iron:core@1.0.7
+iron:dynamic-template@1.0.7
+iron:layout@1.0.7
+iron:location@1.0.7
+iron:middleware-stack@1.0.7
+iron:router@1.0.7
+iron:url@1.0.7
 jquery@1.11.3_2
 json@1.0.3
 launch-screen@1.0.2
