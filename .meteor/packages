@@ -8,4 +8,6 @@ standard-app-packages
 bootstrap
 iron:router
 sacha:spin
+accounts-password
+mrt:accounts-ui-bootstrap-dropdown
 
