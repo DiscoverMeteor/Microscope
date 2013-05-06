@@ -20,3 +20,4 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 insecure                # Allow all DB writes from clients (for prototyping)
 twbs:bootstrap
 underscore
+iron:router
