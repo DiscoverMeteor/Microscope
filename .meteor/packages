@@ -6,3 +6,5 @@
 insecure
 standard-app-packages
 bootstrap
+iron:router
+
