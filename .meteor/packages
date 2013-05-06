@@ -9,3 +9,5 @@ mizzao:bootstrap-3
 underscore
 iron:router
 sacha:spin
+accounts-password
+ian:accounts-ui-bootstrap-3
