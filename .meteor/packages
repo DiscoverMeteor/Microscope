@@ -7,3 +7,5 @@ insecure
 preserve-inputs
 bootstrap
 router
+accounts-ui-bootstrap-dropdown
+accounts-password
