@@ -7,6 +7,10 @@ Tracker.autorun(function(){
       favorite_color: _.sample(['blue','red','green','yellow']),
       user_id: Meteor.user()._id,
       user_hash: Meteor.user().intercomHash,
+      widget: {
+        activator: '#Intercom',
+        use_counter: true
+      },
       app_id: "4na10aq1"
     };
     Intercom('boot', intercomSettings);
