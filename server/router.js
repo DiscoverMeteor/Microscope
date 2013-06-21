@@ -5,6 +5,16 @@ Meteor.Router.add({
       description: "The latest posts from Microscope, the smallest news aggregator."
     });
     
+    Posts.find({}, {sort: {submitted: -1}, limit: 20}).forEach(function(post) {
+      feed.item({
+        title: post.title,
+        description: post.body,
+        author: post.author,
+        date: post.submitted,
+        url: '/posts/' + post._id
+      })
+    });
+    
     return feed.xml();
   }
 });
