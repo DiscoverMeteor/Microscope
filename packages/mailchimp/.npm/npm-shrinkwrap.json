@@ -1,0 +1,101 @@
+{
+  "dependencies": {
+    "mailchimp": {
+      "version": "1.0.3",
+      "dependencies": {
+        "request": {
+          "version": "2.21.0",
+          "dependencies": {
+            "qs": {
+              "version": "0.6.5"
+            },
+            "json-stringify-safe": {
+              "version": "4.0.0"
+            },
+            "forever-agent": {
+              "version": "0.5.0"
+            },
+            "tunnel-agent": {
+              "version": "0.3.0"
+            },
+            "http-signature": {
+              "version": "0.9.11",
+              "dependencies": {
+                "assert-plus": {
+                  "version": "0.1.2"
+                },
+                "asn1": {
+                  "version": "0.1.11"
+                },
+                "ctype": {
+                  "version": "0.5.2"
+                }
+              }
+            },
+            "hawk": {
+              "version": "0.13.1",
+              "dependencies": {
+                "hoek": {
+                  "version": "0.8.5"
+                },
+                "boom": {
+                  "version": "0.4.2",
+                  "dependencies": {
+                    "hoek": {
+                      "version": "0.9.1"
+                    }
+                  }
+                },
+                "cryptiles": {
+                  "version": "0.2.1"
+                },
+                "sntp": {
+                  "version": "0.2.4",
+                  "dependencies": {
+                    "hoek": {
+                      "version": "0.9.1"
+                    }
+                  }
+                }
+              }
+            },
+            "aws-sign": {
+              "version": "0.3.0"
+            },
+            "oauth-sign": {
+              "version": "0.3.0"
+            },
+            "cookie-jar": {
+              "version": "0.3.0"
+            },
+            "node-uuid": {
+              "version": "1.4.0"
+            },
+            "mime": {
+              "version": "1.2.9"
+            },
+            "form-data": {
+              "version": "0.0.8",
+              "dependencies": {
+                "combined-stream": {
+                  "version": "0.0.4",
+                  "dependencies": {
+                    "delayed-stream": {
+                      "version": "0.0.5"
+                    }
+                  }
+                },
+                "async": {
+                  "version": "0.2.9"
+                }
+              }
+            }
+          }
+        },
+        "qs": {
+          "version": "0.5.6"
+        }
+      }
+    }
+  }
+}
