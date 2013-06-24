@@ -3,9 +3,8 @@ var MAILCHIMP_API_KEY = 'a20d3e317c6bfe0a08088887c71c05cd-us7';
 
 // sign users up to mailchimp when they are created
 Accounts.validateNewUser(function(user) {
-  // XXX: what to do here?
   if (! user.emails)
-    return;
+    throw 'User must have an email address';
   
   var email = user.emails[0].address;
   
