@@ -16,5 +16,10 @@ Meteor.Router.add({
     });
     
     return feed.xml();
+  },
+  
+  '/api/posts': function() {
+    var data = Posts.find().fetch();
+    return JSON.stringify(data);
   }
 });
