@@ -21,5 +21,14 @@ Meteor.Router.add({
   '/api/posts': function() {
     var data = Posts.find().fetch();
     return JSON.stringify(data);
+  },
+  
+  '/api/posts/:_id': function(id) {
+    var post = Posts.findOne(id);
+    if (post) {
+      return JSON.stringify(post);
+    } else {
+      return [404, "Post not found"];
+    }
   }
 });
