@@ -10,7 +10,7 @@ Template.postItem.helpers({
   upvotedClass: function() {
     var userId = Meteor.userId();
     if (userId && !_.include(this.upvoters, userId)) {
-      return 'btn-primary upvoteable';
+      return 'btn-primary upvotable';
     } else {
       return 'disabled';
     }
