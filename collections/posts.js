@@ -42,7 +42,7 @@ Meteor.methods({
     });
 
     // shorten link URL
-    if(!this.isSimulation){
+    if(post.url && !this.isSimulation){
       var shortenResponse = Meteor.http.get(
         "https://api-ssl.bitly.com/v3/shorten?", 
         {
