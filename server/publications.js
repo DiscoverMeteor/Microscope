@@ -6,6 +6,10 @@ Meteor.publish('bestPosts', function(limit) {
   return Posts.find({}, {sort: {votes: -1, submitted: -1}, limit: limit});
 });
 
+Meteor.publish('mostClickedPosts', function(limit) {
+  return Posts.find({}, {sort: {clicks: -1, submitted: -1}, limit: limit});
+});
+
 Meteor.publish('singlePost', function(id) {
   return id && Posts.find(id);
 });
