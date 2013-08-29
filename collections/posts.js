@@ -31,7 +31,7 @@ Meteor.methods({
         'This link has already been posted', 
         postWithSameLink._id);
     }
-    
+
     // pick out the whitelisted keys
     var post = _.extend(_.pick(postAttributes, 'url', 'title', 'message'), {
       userId: user._id, 
@@ -40,6 +40,23 @@ Meteor.methods({
       commentsCount: 0,
       upvoters: [], votes: 0
     });
+
+    // shorten link URL
+    if(post.url && !this.isSimulation){
+      var shortenResponse = Meteor.http.get(
+        "https://api-ssl.bitly.com/v3/shorten?", 
+        {
+          timeout: 5000,
+          params:{ 
+            "format": "json",
+            "access_token": 'a5bd3da617a664779650ee8bfcf16f747c8d361a',
+            "longUrl": post.url
+          }
+        }
+      );
+      if(shortenResponse.statusCode == 200)
+        post.shortUrl = shortenResponse.data.data.url
+    }
     
     var postId = Posts.insert(post);
     
