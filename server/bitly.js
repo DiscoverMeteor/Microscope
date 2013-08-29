@@ -18,4 +18,27 @@ Meteor.methods({
   'getBitlyClicks': function(link){
     return getBitlyClicks(link);
   }
-})
+});
+
+var callInterval = 10000; // 1000ms * 10 = 10s
+
+Meteor.setInterval(function(){
+  // get all posts with the shortUrl property
+  var shortUrlPosts = Posts.find({shortUrl: { $exists: true }});
+  var postsNumber = shortUrlPosts.count();
+
+  // initialize counter
+  var count = 0;
+
+  shortUrlPosts.forEach(function(post){
+    // calculate the right delay to distribute API calls evenly throughout the interval
+    var callTimeout = Math.round(callInterval/postsNumber*count);
+
+    Meteor.setTimeout(function(){
+      Posts.update(post._id, {$set: {clicks: getBitlyClicks(post.shortUrl)}});
+    }, callTimeout);
+    
+    count++;
+  });
+
+}, callInterval);
