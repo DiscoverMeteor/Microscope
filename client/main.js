@@ -1,11 +1,11 @@
-newPostsHandle = Meteor.subscribeWithPagination('newPosts', 10);
-bestPostsHandle = Meteor.subscribeWithPagination('bestPosts', 10);
-mostClickedPostsHandle = Meteor.subscribeWithPagination('mostClickedPosts', 10);
+newPostsHandle = Meteor.subscribeWithPagination('newPosts', 3);
+bestPostsHandle = Meteor.subscribeWithPagination('bestPosts', 3);
+mostClickedPostsHandle = Meteor.subscribeWithPagination('mostClickedPosts', 3);
 
 Deps.autorun(function() {
-  Meteor.subscribe('singlePost', Session.get('currentPostId'));
-  
+  Meteor.subscribe('singlePost', Session.get('currentPostId'));  
   Meteor.subscribe('comments', Session.get('currentPostId'));
+  Meteor.subscribe('searchedPosts', Session.get('searchQuery'));
 })
 
 Meteor.subscribe('notifications');

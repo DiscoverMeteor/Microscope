@@ -10,6 +10,21 @@ Meteor.publish('mostClickedPosts', function(limit) {
   return Posts.find({}, {sort: {clicks: -1, submitted: -1}, limit: limit});
 });
 
+Meteor.publish('searchedPosts', function(query) {
+  console.log(query)
+  if(query){
+      var doc = {};
+      var postsIds = getSearchedPosts(query);
+      console.log(postsIds)
+      if (postsIds) {
+          doc._id = {
+              $in: postsIds
+          };
+      }
+      return Posts.find(doc);
+    }
+});
+
 Meteor.publish('singlePost', function(id) {
   return id && Posts.find(id);
 });
