@@ -16,6 +16,15 @@ Template.bestPosts.helpers({
   }
 });
 
+Template.mostClickedPosts.helpers({
+  options: function() {
+    return {
+      sort: {clicks: -1, submitted: -1},
+      handle: mostClickedPostsHandle
+    }
+  }
+});
+
 Template.postsList.helpers({
   postsWithRank: function() {
     var i = 0, options = {sort: this.sort, limit: this.handle.limit()};

@@ -2,7 +2,8 @@ Meteor.Router.add({
   '/': {to: 'newPosts', as: 'home'},
   '/best': 'bestPosts',
   '/new': 'newPosts',
-  
+  '/clicked': 'mostClickedPosts',
+
   '/posts/:_id': {
     to: 'postPage', 
     and: function(id) { Session.set('currentPostId', id); }
