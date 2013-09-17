@@ -10,10 +10,10 @@
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li class="{{activeRouteClass 'home' 'newPosts'}}">
-            <a href="{{homePath}}">New</a>
+            <a href="{{pathFor 'home'}}">New</a>
           </li>
           <li class="{{activeRouteClass  'bestPosts'}}">
-            <a href="{{bestPostsPath}}">Best</a>
+            <a href="{{pathFor 'bestPosts'}}">Best</a>
           </li>
           {{#if currentUser}}
             <li>

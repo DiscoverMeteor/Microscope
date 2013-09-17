@@ -6,7 +6,7 @@
       <p>
         {{pluralize votes "Vote"}},
         submitted by {{author}},
-        <a href="{{postPagePath this}}">{{pluralize commentsCount "comment"}}</a>
+        <a href="{{pathFor 'postPage' this}}">{{pluralize commentsCount "comment"}}</a>
         {{#if ownPost}}<a href="{{postEditPath this}}">Edit</a>{{/if}}
       </p>
     </div>
