@@ -1,6 +1,6 @@
 Meteor.Router.add({
- // '/': {to: 'newPosts', as: 'home'},
-  '/': 'launch',
+  '/': {to: 'newPosts', as: 'home'},
+  '/launch': 'launch',
   '/best': 'bestPosts',
   '/new': 'newPosts',
   
