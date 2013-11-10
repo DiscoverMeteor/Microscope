@@ -8,3 +8,4 @@ standard-app-packages
 twbs:bootstrap
 underscore
 iron:router@1.0.0-rc.1
+sacha:spin
