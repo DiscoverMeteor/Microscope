@@ -35,6 +35,7 @@ reactive-dict@1.0.0
 reload@1.0.0
 retry@1.0.0
 routepolicy@1.0.0
+sacha:spin@2.0.4
 session@1.0.0
 spacebars-compiler@1.0.1
 spacebars@1.0.0
