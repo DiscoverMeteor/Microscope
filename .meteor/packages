@@ -8,3 +8,4 @@ preserve-inputs
 standard-app-packages
 bootstrap
 iron-router
+spin
