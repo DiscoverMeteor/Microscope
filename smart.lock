@@ -4,7 +4,8 @@
     "basePackages": {
       "iron-router": {},
       "spin": {},
-      "accounts-ui-bootstrap-dropdown": {}
+      "accounts-ui-bootstrap-dropdown": {},
+      "iron-router-progress": {}
     },
     "packages": {
       "iron-router": {
@@ -19,8 +20,13 @@
       },
       "accounts-ui-bootstrap-dropdown": {
         "git": "https://github.com/erobit/meteor-accounts-ui-bootstrap-dropdown.git",
-        "tag": "v0.8.0",
-        "commit": "5544504272378bdca58d4101737d1f368f779cb4"
+        "tag": "v0.8.3",
+        "commit": "a7af8a52e4e74db020a69b158a8f992797b8b0b0"
+      },
+      "iron-router-progress": {
+        "git": "https://github.com/Multiply/iron-router-progress.git",
+        "tag": "v0.3.0",
+        "commit": "5761294b1530d1c48a311d7e06421d563e5b45e5"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
