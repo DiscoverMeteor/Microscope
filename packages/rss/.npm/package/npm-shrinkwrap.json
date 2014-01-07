@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "rss": {
+      "version": "0.0.4",
+      "resolved": "https://registry.npmjs.org/rss/-/rss-0.0.4.tgz",
+      "from": "rss@0.0.4",
+      "dependencies": {
+        "xml": {
+          "version": "0.0.10",
+          "resolved": "https://registry.npmjs.org/xml/-/xml-0.0.10.tgz",
+          "from": "xml@0.0.10"
+        }
+      }
+    }
+  }
+}
