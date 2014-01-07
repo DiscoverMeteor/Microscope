@@ -27,3 +27,5 @@ check
 audit-argument-checks
 session
 rss
+http
+bitly

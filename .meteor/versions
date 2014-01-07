@@ -8,6 +8,7 @@ babel-compiler@6.6.4
 babel-runtime@0.1.8
 base64@1.0.8
 binary-heap@1.0.8
+bitly@1.0.0
 blaze@2.1.7
 blaze-html-templates@1.0.4
 blaze-tools@1.0.8
