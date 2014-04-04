@@ -46,6 +46,11 @@ body {
     clear: both; }
   .post.invisible {
     opacity: 0; }
+  .post.instant {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none; }
   .post .upvote {
     display: block;
     margin: 7px 12px 0 0;
