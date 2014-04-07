@@ -18,10 +18,15 @@ Template.postItem.helpers({
     }
   },
   attributes: function() {
+    console.log('running attributes for post '+this.title)
+    var postId = this._id;
+    var postData = PostsData.findOne({postId: postId});
+    var previousPosition = !!postData ? postData.position : undefined;  
     var newPosition = this._rank * POST_HEIGHT;
-    var sessionKey = 'current-post-position-' + this._id;
-    var previousPosition = Session.get(sessionKey);
     var attributes = {}
+
+    console.log('previous: '+previousPosition)
+    console.log('new: '+newPosition)
 
     if (_.isUndefined(previousPosition)) {
       attributes.class = 'post invisible';
@@ -32,10 +37,12 @@ Template.postItem.helpers({
         attributes.class = "post animate"
     }
     
-    Meteor.setTimeout(function() {
-      Session.set(sessionKey, newPosition);
-    }); 
-    
+    if (previousPosition !== newPosition) {
+      Meteor.setTimeout(function() {
+        PostsData.upsert({postId: postId}, {$set: {position: newPosition}});
+      }); 
+    }
+
     return attributes;
   }
 });

@@ -1,0 +1,1 @@
+PostsData = new Meteor.Collection(null);
