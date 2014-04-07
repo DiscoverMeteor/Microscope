@@ -20,7 +20,7 @@ Template.postItem.helpers({
   attributes: function() {
     console.log('running attributes for post '+this.title)
     var post = _.extend(this, PostsData.findOne({postId: this._id}));
-    var previousPosition = post.position || undefined;  
+    var previousPosition = post.position;  
     var newPosition = this._rank * POST_HEIGHT;
     var attributes = {}
 
