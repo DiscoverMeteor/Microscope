@@ -17,22 +17,23 @@ Template.postItem.helpers({
       return 'disabled';
     }
   },
-  attrs: function() {
+  attributes: function() {
     var newPosition = this._rank * POST_HEIGHT;
     var key = 'current-post-position-' + this._id;
-    
     var previousPosition = Session.get(key);
-    var attrs = {}
+    var attributes = {}
+
     if (! _.isUndefined(previousPosition)) {
       // calculate difference between old position and new position and send element there
       var delta = previousPosition - newPosition;
-      attrs.style = "top: " + delta + "px";
+      attributes.style = "top: " + delta + "px";
       
-      // if we are moving to the "old position", don't animate
-      if (delta !== 0)
-        attrs.class = "post instant"
+      // if we are moving back to 0, add "animate" class
+      if (delta === 0)
+        attributes.class = "post animate"
     } else {
-      attrs.class = 'post invisible';
+      // if no Session variable is set, this is the first time the helper is being run
+      attributes.class = 'post invisible';
     }
     
     // let it draw in the old position, then..
@@ -42,8 +43,8 @@ Template.postItem.helpers({
       }); 
     }
     
-    console.log(attrs)
-    return attrs;
+    console.log(attributes)
+    return attributes;
   }
 });
 
