@@ -19,31 +19,23 @@ Template.postItem.helpers({
   },
   attributes: function() {
     var newPosition = this._rank * POST_HEIGHT;
-    var key = 'current-post-position-' + this._id;
-    var previousPosition = Session.get(key);
+    var sessionKey = 'current-post-position-' + this._id;
+    var previousPosition = Session.get(sessionKey);
     var attributes = {}
 
-    if (! _.isUndefined(previousPosition)) {
-      // calculate difference between old position and new position and send element there
-      var delta = previousPosition - newPosition;
+    if (_.isUndefined(previousPosition)) {
+      attributes.class = 'post invisible';
+    } else {
+      var delta = previousPosition - newPosition;      
       attributes.style = "top: " + delta + "px";
-      
-      // if we are moving back to 0, add "animate" class
       if (delta === 0)
         attributes.class = "post animate"
-    } else {
-      // if no Session variable is set, this is the first time the helper is being run
-      attributes.class = 'post invisible';
     }
     
-    // let it draw in the old position, then..
-    if (previousPosition !== newPosition) {
-      Meteor.setTimeout(function() {
-        Session.set(key, newPosition);
-      }); 
-    }
+    Meteor.setTimeout(function() {
+      Session.set(sessionKey, newPosition);
+    }); 
     
-    console.log(attributes)
     return attributes;
   }
 });
