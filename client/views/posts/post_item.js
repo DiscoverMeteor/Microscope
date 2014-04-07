@@ -17,24 +17,22 @@ Template.postItem.helpers({
       return 'disabled';
     }
   },
-  style: function(parent) {
-    parent.posts.rewind();
-    var rank = _.indexOf(parent.posts.map(function(p) { return p._id }), this._id);
-    var newPosition = rank * POST_HEIGHT;
+  attrs: function() {
+    var newPosition = this._rank * POST_HEIGHT;
     var key = 'current-post-position-' + this._id;
     
     var previousPosition = Session.get(key);
-    var props = {}
+    var attrs = {}
     if (! _.isUndefined(previousPosition)) {
       // calculate difference between old position and new position and send element there
       var delta = previousPosition - newPosition;
-      props.style = "top: " + delta + "px";
+      attrs.style = "top: " + delta + "px";
       
       // if we are moving to the "old position", don't animate
       if (delta !== 0)
-        props.class = "post instant"
+        attrs.class = "post instant"
     } else {
-      props.class = 'post invisible';
+      attrs.class = 'post invisible';
     }
     
     // let it draw in the old position, then..
@@ -44,7 +42,8 @@ Template.postItem.helpers({
       }); 
     }
     
-    return props;
+    console.log(attrs)
+    return attrs;
   }
 });
 
