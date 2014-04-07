@@ -19,9 +19,8 @@ Template.postItem.helpers({
   },
   attributes: function() {
     console.log('running attributes for post '+this.title)
-    var postId = this._id;
-    var postData = PostsData.findOne({postId: postId});
-    var previousPosition = !!postData ? postData.position : undefined;  
+    var post = _.extend(this, PostsData.findOne({postId: this._id}));
+    var previousPosition = post.position || undefined;  
     var newPosition = this._rank * POST_HEIGHT;
     var attributes = {}
 
@@ -36,10 +35,10 @@ Template.postItem.helpers({
       if (delta === 0)
         attributes.class = "post animate"
     }
-    
+
     if (previousPosition !== newPosition) {
       Meteor.setTimeout(function() {
-        PostsData.upsert({postId: postId}, {$set: {position: newPosition}});
+        PostsData.upsert({postId: post._id}, {$set: {position: newPosition}});
       }); 
     }
 
