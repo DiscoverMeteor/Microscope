@@ -12,6 +12,15 @@ Posts.deny({
   }
 });
 
+var escape = function(s) {
+  return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+};
+
+Posts.search = function(term, options) {
+  var where = {title: {$regex: escape(term), $options: 'i'}};
+  return Posts.find(where, options);
+}
+
 Meteor.methods({
   post: function(postAttributes) {
     var user = Meteor.user(),
