@@ -1,4 +1,5 @@
 Meteor.publish('posts', function(options) {
+  Meteor._sleepForMs(2000)
   return Posts.find({}, options);
 });
 
