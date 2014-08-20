@@ -114,3 +114,8 @@ body {
   .load-more:hover {
     text-decoration: none;
     background: rgba(0, 0, 0, 0.1); }
+
+.posts .spinner-container{
+  position: relative;
+  height: 100px;
+}
