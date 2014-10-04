@@ -17,7 +17,7 @@ Meteor.methods({
     comment = _.extend(_.pick(commentAttributes, 'postId', 'body'), {
       userId: user._id,
       author: user.username,
-      submitted: new Date().getTime()
+      submitted: new Date()
     });
     
     // update the post with the number of comments
