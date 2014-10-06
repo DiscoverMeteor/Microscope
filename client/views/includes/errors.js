@@ -1,4 +1,7 @@
 Template.errors.helpers({
+  ready: function() {
+    return Router.current() && Router.current().ready();
+  },
   errors: function() {
     return Errors.find();
   }

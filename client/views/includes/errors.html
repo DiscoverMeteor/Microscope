@@ -1,8 +1,10 @@
 <template name="errors">
   <div class="errors row-fluid">    
-    {{#each errors}}
-      {{> error}}
-    {{/each}}
+    {{#if ready}}
+      {{#each errors}}
+        {{> error}}
+      {{/each}}
+    {{/if}}
   </div>
 </template>
 
