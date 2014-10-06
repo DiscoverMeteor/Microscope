@@ -14,6 +14,8 @@ Posts.deny({
 
 Meteor.methods({
   post: function(postAttributes) {
+    check(postAttributes, Object);
+    
     var user = Meteor.user(),
       postWithSameLink = Posts.findOne({url: postAttributes.url});
     
@@ -47,6 +49,8 @@ Meteor.methods({
   },
   
   upvote: function(postId) {
+    check(postId, String);
+    
     var user = Meteor.user();
     // ensure the user is logged in
     if (!user)
