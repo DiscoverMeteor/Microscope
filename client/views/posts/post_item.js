@@ -3,7 +3,7 @@ var Positions = new Meteor.Collection(null);
 
 Template.postItem.helpers({
   ownPost: function() {
-    return this.userId === Meteor.userId();
+    return ownsDocument(Meteor.userId(), this);
   },
   domain: function() {
     var a = document.createElement('a');
