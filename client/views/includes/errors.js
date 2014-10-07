@@ -1,3 +1,5 @@
+var ERROR_DISPLAY = 3000;
+
 Template.errors.helpers({
   ready: function() {
     return Router.current() && Router.current().ready();
@@ -9,7 +11,7 @@ Template.errors.helpers({
 
 Template.error.rendered = function() {
   var error = this.data;
-  Meteor.defer(function() {
-    Errors.update(error._id, {$set: {seen: true}});
-  });
+  Errors.update(error._id, {$set: {seen: true}});
+
+  Meteor.setTimeout(clearErrors, 3000);
 };
