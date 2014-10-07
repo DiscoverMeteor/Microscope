@@ -11,7 +11,7 @@ Template.errors.helpers({
 
 Template.error.rendered = function() {
   var error = this.data;
-  Errors.update(error._id, {$set: {seen: true}});
-
-  Meteor.setTimeout(clearErrors, 3000);
+  Meteor.setTimeout(function () {
+    Errors.remove(error._id);
+  }, 3000);
 };

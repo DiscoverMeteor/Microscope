@@ -142,13 +142,23 @@ body {
   100% {opacity: 0;}
 }
 
-.alert {
-          animation: fadeOut 3000ms ease-in 0s 1 forwards;
-  -webkit-animation: fadeOut 3000ms ease-in 0s 1 forwards;
-     -moz-animation: fadeOut 3000ms ease-in 0s 1 forwards;
+.errors{
   position: fixed;
   z-index: 10000;
+  padding: 10px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  pointer-events: none;
+}
+.alert {
+          animation: fadeOut 2700ms ease-in 0s 1 forwards;
+  -webkit-animation: fadeOut 2700ms ease-in 0s 1 forwards;
+     -moz-animation: fadeOut 2700ms ease-in 0s 1 forwards;
   width: 250px;
-  top: 10px;
-  right: 10px;
+  float: right;
+  clear: both;
+  margin-bottom: 5px;
+  pointer-events: auto;
 }
