@@ -127,3 +127,28 @@ body {
   font-size: 60px;
   font-weight: 100;
 }
+
+@-webkit-keyframes fadeOut {
+  0% {opacity: 0;}
+  10% {opacity: 1;}
+  90% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@keyframes fadeOut {
+  0% {opacity: 0;}
+  10% {opacity: 1;}
+  90% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.alert {
+          animation: fadeOut 3000ms ease-in 0s 1 forwards;
+  -webkit-animation: fadeOut 3000ms ease-in 0s 1 forwards;
+     -moz-animation: fadeOut 3000ms ease-in 0s 1 forwards;
+  position: fixed;
+  z-index: 10000;
+  width: 250px;
+  top: 10px;
+  right: 10px;
+}
