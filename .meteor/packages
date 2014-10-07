@@ -5,11 +5,10 @@
 
 insecure
 standard-app-packages
-bootstrap
 iron:router
 sacha:spin
 accounts-password
-mrt:accounts-ui-bootstrap-dropdown
 mrt:iron-router-progress
 audit-argument-checks
-
+mizzao:bootstrap-3
+ian:accounts-ui-bootstrap-3
