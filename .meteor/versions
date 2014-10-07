@@ -1,5 +1,6 @@
 accounts-base@1.1.1
 accounts-password@1.0.2
+anti:i18n@0.4.3
 application-configuration@1.0.2
 audit-argument-checks@1.0.0
 autoupdate@1.1.1
@@ -8,7 +9,6 @@ binary-heap@1.0.0
 blaze-tools@1.0.0
 blaze@2.0.1
 boilerplate-generator@1.0.0
-bootstrap@1.0.1
 callback-hook@1.0.0
 check@1.0.1
 coffeescript@1.0.3
@@ -21,9 +21,11 @@ email@1.0.3
 fastclick@1.0.0
 follower-livedata@1.0.1
 geojson-utils@1.0.0
+handlebars@1.0.0
 html-tools@1.0.1
 htmljs@1.0.1
 http@1.0.6
+ian:accounts-ui-bootstrap-3@1.1.11
 id-map@1.0.0
 insecure@1.0.0
 iron:core@0.3.4
@@ -40,9 +42,9 @@ meteor-platform@1.1.1
 meteor@1.1.1
 minifiers@1.1.0
 minimongo@1.0.3
+mizzao:bootstrap-3@3.2.0_1
 mobile-status-bar@1.0.0
 mongo@1.0.6
-mrt:accounts-ui-bootstrap-dropdown@0.8.3
 mrt:iron-router-progress@0.9.2
 npm-bcrypt@0.7.7
 observe-sequence@1.0.2
@@ -61,6 +63,7 @@ spacebars-compiler@1.0.2
 spacebars@1.0.2
 srp@1.0.0
 standard-app-packages@1.0.2
+stylus@1.0.4
 templating@1.0.7
 tracker@1.0.2
 ui@1.0.3
