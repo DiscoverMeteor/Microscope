@@ -119,3 +119,11 @@ body {
   position: relative;
   height: 100px;
 }
+
+.not-found{
+  text-align: center;
+}
+.not-found h2{
+  font-size: 60px;
+  font-weight: 100;
+}
