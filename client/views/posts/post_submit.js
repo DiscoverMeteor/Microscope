@@ -1,12 +1,13 @@
-var ERRORS_KEY = 'postSubmitErrors';
-
 Template.postSubmit.created = function() {
-  Session.set(ERRORS_KEY, {});
+  Session.set('postSubmitErrors', {});
 }
 
 Template.postSubmit.helpers({
-  errors: function() {
-    return Session.get(ERRORS_KEY);
+  errorMessage: function(field) {
+    return Session.get('postSubmitErrors')[field];
+  },
+  errorClass: function (field) {
+    return !!Session.get('postSubmitErrors')[field] ? 'has-error' : '';
   }
 });
 
@@ -20,17 +21,12 @@ Template.postSubmit.events({
       message: $(e.target).find('[name=message]').val()
     }
     
-    // ensure the post has a title
-    var errors = {}
-    if (!post.title)
-      errors.title = 'Please fill in a headline';
+    var errors = validatePost(post);
     
-    // and a URL
-    if (!post.url)
-      errors.url =  "Please fill in a URL";
-    
-    if (_.keys(errors).length)
-      return Session.set(ERRORS_KEY, errors);
+    if (errors.title || errors.url){
+      Session.set('postSubmitErrors', errors);
+      return;
+    }
     
     Meteor.call('post', post, function(error, result) {
       // display the error to the user and abort

@@ -1,15 +1,36 @@
+Template.postEdit.created = function() {
+  Session.set('postEditErrors', {});
+}
+
+Template.postEdit.helpers({
+  errorMessage: function(field) {
+    return Session.get('postEditErrors')[field];
+  },
+  errorClass: function (field) {
+    return !!Session.get('postEditErrors')[field] ? 'has-error' : '';
+  }
+});
+
 Template.postEdit.events({
   'submit form': function(e) {
     e.preventDefault();
     
     var currentPostId = this._id;
     
-    var postProperties = {
+    var post = {
       url: $(e.target).find('[name=url]').val(),
-      title: $(e.target).find('[name=title]').val()
+      title: $(e.target).find('[name=title]').val(),
+      message: $(e.target).find('[name=message]').val()
     }
     
-    Posts.update(currentPostId, {$set: postProperties}, function(error) {
+    var errors = validatePost(post);
+    
+    if (errors.title || errors.url){
+      Session.set('postEditErrors', errors);
+      return;
+    }
+
+    Posts.update(currentPostId, {$set: post}, function(error) {
       if (error) {
         // display the error to the user
         throwError(error.reason);
