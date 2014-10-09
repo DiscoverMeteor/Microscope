@@ -37,12 +37,11 @@ Template.postSubmit.events({
       if (error)
         return throwError(error.reason);
       
-      if (result.ok) {
-        Router.go('postPage', {_id: result._id});
-      } else {
-        throwError(result.redirect.message)
-        Router.go('postPage', {_id: result.redirect.existingId});
+      if (result.postExists) {
+        throwError('This link has already been posted');
       }
+    
+      Router.go('postPage', {_id: result._id});  
     });
   }
 });
