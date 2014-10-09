@@ -1,6 +1,7 @@
 <template name="postSubmit">
   <form class="main form">
     <div class="form-group">
+      {{#if errors.url}}<h3>{{errors.url}}</h3>{{/if}}
       <label class="control-label" for="url">URL</label>
       <div class="controls">
           <input name="url" id="url" type="text" value="" placeholder="Your URL" class="form-control"/>
