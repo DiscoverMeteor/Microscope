@@ -17,8 +17,7 @@ Template.postSubmit.events({
     
     var post = {
       url: $(e.target).find('[name=url]').val(),
-      title: $(e.target).find('[name=title]').val(),
-      message: $(e.target).find('[name=message]').val()
+      title: $(e.target).find('[name=title]').val()
     }
     
     var errors = validatePost(post);
