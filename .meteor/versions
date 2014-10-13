@@ -20,7 +20,6 @@ htmljs@1.0.4
 http@1.1.0
 ian:accounts-ui-bootstrap-3@1.2.39
 id-map@1.0.3
-insecure@1.0.3
 iron:controller@1.0.7
 iron:core@1.0.7
 iron:dynamic-template@1.0.7
