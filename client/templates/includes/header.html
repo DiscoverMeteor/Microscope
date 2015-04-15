@@ -1,36 +1,34 @@
 <template name="header">
   <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="{{pathFor 'home'}}">Microscope</a>
-      </div>
-      <div class="collapse navbar-collapse" id="navigation">
-        <ul class="nav navbar-nav">
-          <li class="{{activeRouteClass 'home' 'newPosts'}}">
-            <a href="{{pathFor 'newPosts'}}">New</a>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{pathFor 'home'}}">Microscope</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navigation">
+      <ul class="nav navbar-nav">
+        <li class="{{activeRouteClass 'home' 'newPosts'}}">
+          <a href="{{pathFor 'newPosts'}}">New</a>
+        </li>
+        <li class="{{activeRouteClass  'bestPosts'}}">
+          <a href="{{pathFor 'bestPosts'}}">Best</a>
+        </li>
+        {{#if currentUser}}
+          <li class="{{activeRouteClass 'postSubmit'}}">
+            <a href="{{pathFor 'postSubmit'}}">Submit Post</a>
           </li>
-          <li class="{{activeRouteClass  'bestPosts'}}">
-            <a href="{{pathFor 'bestPosts'}}">Best</a>
+          <li class="dropdown">
+            {{> notifications}}
           </li>
-          {{#if currentUser}}
-            <li class="{{activeRouteClass 'postSubmit'}}">
-              <a href="{{pathFor 'postSubmit'}}">Submit Post</a>
-            </li>
-            <li class="dropdown">
-              {{> notifications}}
-            </li>
-          {{/if}}
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          {{> loginButtons}}
-        </ul>
-      </div>
+        {{/if}}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {{> loginButtons}}
+      </ul>
     </div>
   </nav>
 </template>
