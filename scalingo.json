@@ -1,0 +1,8 @@
+{
+  "name": "Microscope",
+  "description": "A simple social news app that lets you share links, comment, and vote on them",
+  "repository": "https://github.com/DiscoverMeteor/Microscope",
+  "logo": "",
+  "website": "",
+  "addons": ["scalingo-mongodb"]
+}

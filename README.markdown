@@ -32,3 +32,8 @@ in seconds:
 [![Hack DiscoverMeteor/Microscope on
 Nitrous.IO](https://d3o0mnbgv6k92a.cloudfront.net/assets/hack-l-v1-3cc067e71372f6045e1949af9d96095b.png)](https://www.nitrous.io/hack_button?source=embed&runtime=nodejs&repo=DiscoverMeteor%2FMicroscope&file_to_open=README.nitrous.md)
 
+### One Click Deploy
+
+Host your own Microscope app on [Scalingo](https://scalingo.com/):
+
+[![Deploy on Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/DiscoverMeteor/Microscope)
