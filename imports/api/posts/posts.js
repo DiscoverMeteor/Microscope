@@ -127,3 +127,5 @@ Meteor.methods({
       throw new Meteor.Error('invalid', "You weren't able to upvote that post");
   }
 });
+
+// export default Posts;
