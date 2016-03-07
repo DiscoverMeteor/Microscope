@@ -27,3 +27,4 @@ mdg:validated-method
 standard-minifier-css
 standard-minifier-js
 kadira:flow-router
+react-meteor-data

@@ -6,7 +6,7 @@ import App from '../../ui/layouts/App.jsx';
 import PostsListPage from '../../ui/pages/PostsListPage.jsx';
 
 FlowRouter.route('/', {
-  name: 'posts.list',
+  name: 'posts.new',
   action() {
     mount(App, {
       main: () => <PostsListPage />,

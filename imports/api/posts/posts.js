@@ -1,131 +1,49 @@
-Posts = new Mongo.Collection('posts');
+import { Mongo } from 'meteor/mongo';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
-Posts.schema = new SimpleSchema({
+const Posts = new Mongo.Collection('posts');
+
+const schema = new SimpleSchema({
   title: {
     type: String,
     min: 5,
-    max: 50
+    max: 50,
   },
   url: {
     type: String,
-    regEx: SimpleSchema.RegEx.Url
+    regEx: SimpleSchema.RegEx.Url,
   },
   userId: {
     type: String,
     regEx: SimpleSchema.RegEx.Id,
-    denyUpdate: true
+    denyUpdate: true,
   },
   username: {
     type: String,
-    denyUpdate: true
+    denyUpdate: true,
   },
-  submitted: {
+  submittedAt: {
     type: Date,
-    denyUpdate: true
+    denyUpdate: true,
   },
   commentsCount: {
     type: Number,
-    defaultValue: 0
+    defaultValue: 0,
   },
   upvoterIds: {
     type: Array,
-    defaultValue: []
+    defaultValue: [],
   },
   'upvoterIds.$': {
     type: String,
-    regEx: SimpleSchema.RegEx.Id
+    regEx: SimpleSchema.RegEx.Id,
   },
   upvotes: {
     type: Number,
-    defaultValue: 0
-  }
-});
-
-Posts.attachSchema(Posts.schema);
-
-// Posts.allow({
-//   update: function(userId, post) { return ownsDocument(userId, post); },
-//   remove: function(userId, post) { return ownsDocument(userId, post); },
-// });
-
-// Posts.deny({
-//   update: function(userId, post, fieldNames) {
-//     // may only edit the following two fields:
-//     return (_.without(fieldNames, 'url', 'title').length > 0);
-//   }
-// });
-
-// Posts.deny({
-//   update: function(userId, post, fieldNames, modifier) {
-//     var errors = validatePost(modifier.$set);
-//     return errors.title || errors.url;
-//   }
-// });
-
-// validatePost = function (post) {
-//   var errors = {};
-
-//   if (!post.title)
-//     errors.title = "Please fill in a headline";
-  
-//   if (!post.url)
-//     errors.url =  "Please fill in a URL";
-
-//   return errors;
-// }
-
-Meteor.methods({
-  postInsert: function(postAttributes) {
-    check(this.userId, String);
-    check(postAttributes, {
-      title: String,
-      url: String
-    });
-    
-    var errors = validatePost(postAttributes);
-    if (errors.title || errors.url)
-      throw new Meteor.Error('invalid-post', "You must set a title and URL for your post");
-    
-    var postWithSameLink = Posts.findOne({url: postAttributes.url});
-    if (postWithSameLink) {
-      return {
-        postExists: true,
-        _id: postWithSameLink._id
-      }
-    }
-    
-    var user = Meteor.user();
-    var post = _.extend(postAttributes, {
-      userId: user._id, 
-      author: user.username, 
-      submitted: new Date(),
-      commentsCount: 0,
-      upvoters: [], 
-      votes: 0
-    });
-    
-    var postId = Posts.insert(post);
-    
-    return {
-      _id: postId
-    };
+    defaultValue: 0,
   },
-  
-  upvote: function(postId) {
-    check(this.userId, String);
-    check(postId, String);
-    
-    var affected = Posts.update({
-      _id: postId, 
-      upvoters: {$ne: this.userId}
-    }, {
-      $addToSet: {upvoters: this.userId},
-      $inc: {votes: 1}
-    });
-    
-    if (! affected)
-      throw new Meteor.Error('invalid', "You weren't able to upvote that post");
-  }
 });
 
-// export default Posts;
+Posts.attachSchema(schema);
+
+export default Posts;

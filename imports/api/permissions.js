@@ -1,4 +1,4 @@
 // check that the userId specified owns the documents
-ownsDocument = function(userId, doc) {
-  return doc && doc.userId === userId;
-}
+const ownsDocument = (userId, doc) => doc && doc.userId === userId;
+
+export { ownsDocument };

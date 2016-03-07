@@ -14,7 +14,7 @@ const PostsList = ({ posts, requested, countReady, count, onNextPage }) => {
   return (
     <div className="posts page">
       <div className="wrapper">
-        {posts.map(post => <PostsItem post={post} />)}
+        {posts.map(post => <PostsItem post={post} key={post._id} />)}
       </div>
       {nextLink}
     </div>
