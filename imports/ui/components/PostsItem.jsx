@@ -34,8 +34,8 @@ const PostsItem = ({ post, onUpvote }) => {
       <div className="post-content">
         <h3><a href={post.url}>{post.title}</a><span>{domain}</span></h3>
         <p>
-          {pluralize(post.votes, 'Vote')}
-          submitted by {post.username},
+          {pluralize(post.upvotes, 'Vote')} {' '}
+          submitted by {post.username}, {' '}
           <a href={postPath}>
             {pluralize(post.commentsCount, 'comment')}
           </a>
@@ -49,14 +49,15 @@ const PostsItem = ({ post, onUpvote }) => {
 
 PostsItem.propTypes = {
   post: PropTypes.shape({
-    title: PropTypes.string,
-    url: PropTypes.string,
-    userId: PropTypes.string,
-    username: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    userId: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
     upvoters: PropTypes.arrayOf(PropTypes.string),
-    commentsCount: PropTypes.number,
-  }),
-  onUpvote: PropTypes.func,
+    upvotes: PropTypes.number.isRequired,
+    commentsCount: PropTypes.number.isRequired,
+  }).isRequired,
+  onUpvote: PropTypes.func.isRequired,
 };
 
 export default PostsItem;

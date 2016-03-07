@@ -7,11 +7,10 @@ import Posts from '../../api/posts/Posts.js';
 const PostsListPage = createContainer(() => {
   // XXX: this should be an argument somehow
   const sort = { submitted: -1, _id: -1 };
-  const limit = 3;
+  const limit = 30;
   const sub = Meteor.subscribe('posts.list', { sort, limit });
 
   const posts = Posts.find().fetch();
-  console.table(posts);
   return {
     posts,
     requested: 3,

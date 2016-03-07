@@ -19,7 +19,7 @@ Meteor.publish('posts.list', function publishPostsList(options) {
 Meteor.publish('posts.single', function publishPostsSingle(id) {
   new SimpleSchema({
     id: { type: String, regEx: SimpleSchema.RegEx.Id },
-  }).validate(id);
+  }).validate({ id });
 
   return Posts.find(id);
 });

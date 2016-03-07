@@ -21,7 +21,6 @@ sacha:spin
 accounts-password
 ian:accounts-ui-bootstrap-3
 check
-audit-argument-checks
 aldeed:collection2
 mdg:validated-method
 standard-minifier-css

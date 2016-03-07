@@ -23,7 +23,7 @@ if (Posts.find().count() === 0) {
     url: 'http://sachagreif.com/introducing-telescope/',
     submittedAt: new Date(now - 7 * 3600 * 1000),
     commentsCount: 2,
-    upvoters: [], votes: 0,
+    upvoters: [], upvotes: 0,
   });
 
   Comments.insert({
@@ -49,7 +49,7 @@ if (Posts.find().count() === 0) {
     url: 'http://meteor.com',
     submittedAt: new Date(now - 10 * 3600 * 1000),
     commentsCount: 0,
-    upvoters: [], votes: 0,
+    upvoters: [], upvotes: 0,
   });
 
   Posts.insert({
@@ -59,7 +59,7 @@ if (Posts.find().count() === 0) {
     url: 'http://themeteorbook.com',
     submittedAt: new Date(now - 12 * 3600 * 1000),
     commentsCount: 0,
-    upvoters: [], votes: 0,
+    upvoters: [], upvotes: 0,
   });
 
   for (let i = 0; i < 10; i++) {
@@ -70,7 +70,7 @@ if (Posts.find().count() === 0) {
       url: `http://google.com/?q=test-${i}`,
       submittedAt: new Date(now - i * 3600 * 1000 + 1),
       commentsCount: 0,
-      upvoters: [], votes: 0,
+      upvoters: [], upvotes: 0,
     });
   }
 }
