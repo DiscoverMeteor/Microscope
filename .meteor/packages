@@ -23,6 +23,7 @@ ian:accounts-ui-bootstrap-3
 check
 aldeed:collection2
 mdg:validated-method
+mdg:validation-error
 standard-minifier-css
 standard-minifier-js
 kadira:flow-router

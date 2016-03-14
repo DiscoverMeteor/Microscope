@@ -23,7 +23,7 @@ const PostsShow = ({ ready, post, comments }) => {
       </ul>
 
       {loggedIn ?
-        <CommentsNew post={post} /> :
+        <CommentsNew postId={post._id} /> :
         <p>Please log in to leave a comment.</p>
       }
     </div>

@@ -26,7 +26,7 @@ const PostsItem = ({ post, onUpvote }) => {
     editLink = (<a href="{{pathFor 'postEdit'}}">Edit</a>);
   }
 
-  const postPath = FlowRouter.path('postPage', { _id: post._id });
+  const postPath = FlowRouter.path('posts.show', { _id: post._id });
 
   return (
     <div className="post">
