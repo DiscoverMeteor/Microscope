@@ -8,18 +8,19 @@ class CommentsNew extends Component {
   constructor() {
     super();
 
+    this.onBodyChange = this.onBodyChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.state = { errors: {} };
   }
-
-  onSubmit() {
+  onSubmit(event) {
+    event.preventDefault();
     const comment = {
       postId: this.props.postId,
-      body: 'lorem ipsum',
+      body: this.state.body,
     };
 
     try {
-      insert(comment, error => {
+      insert.call(comment, error => {
         // XXX: clear body value
         // XXX: handle error
       });
@@ -31,12 +32,14 @@ class CommentsNew extends Component {
       }
     }
   }
-
+  onBodyChange(event) {
+    this.setState({ body: event.target.value });
+  }
   errorMessage(field) {
     return this.state.errors[field];
   }
-
   render() {
+    const { body } = this.state;
     const fieldClasses = classnames('form-group', { 'has-error': this.state.errors.body });
 
     return (
@@ -44,7 +47,14 @@ class CommentsNew extends Component {
         <div className={fieldClasses}>
           <div className="controls">
             <label htmlFor="body">Comment on this post</label>
-            <textarea name="body" id="body" className="form-control" rows="3"></textarea>
+            <textarea
+              name="body"
+              id="body"
+              className="form-control"
+              rows="3"
+              value={body}
+              onChange={this.onBodyChange}
+            />
             <span className="help-block">{this.errorMessage('body')}</span>
           </div>
         </div>

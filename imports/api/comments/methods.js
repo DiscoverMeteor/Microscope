@@ -22,8 +22,8 @@ const insert = new ValidatedMethod({
 
     const comment = _.extend({ postId, body }, {
       userId: user._id,
-      author: user.username,
-      submitted: new Date(),
+      username: user.username,
+      submittedAt: new Date(),
     });
 
     // update the post with the number of comments
