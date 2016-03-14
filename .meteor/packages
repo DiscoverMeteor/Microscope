@@ -26,4 +26,4 @@ mdg:validated-method
 standard-minifier-css
 standard-minifier-js
 kadira:flow-router
-react-meteor-data
+react-meteor-data@0.2.6-beta.16

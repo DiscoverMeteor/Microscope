@@ -1,8 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
+import { createContainer } from 'meteor/react-meteor-data';
 
-import createContainer from './createContainer';
 import PostsShow from '../components/PostsShow.jsx';
 import Posts from '../../api/posts/Posts.js';
 import Comments from '../../api/comments/Comments.js';
