@@ -1,5 +1,6 @@
 import React from 'react';
+import { ErrorsList } from 'meteor/errors-react';
 
-const AppErrors = () => (<div id="appErrors" />);
+const AppErrors = () => (<ErrorsList />);
 
 export default AppErrors;

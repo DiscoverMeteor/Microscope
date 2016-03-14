@@ -26,5 +26,5 @@ mdg:validated-method
 mdg:validation-error
 standard-minifier-css
 standard-minifier-js
-kadira:flow-router
+kadira:flow-router@3.0.0
 react-meteor-data@0.2.6-beta.16

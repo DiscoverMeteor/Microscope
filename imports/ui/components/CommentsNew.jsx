@@ -1,8 +1,10 @@
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import { ValidationError } from 'meteor/mdg:validation-error';
+import { Errors } from 'meteor/errors-react';
 
 import { insert } from '../../api/comments/methods.js';
+import { callMethod } from '../util/methods.js';
 
 class CommentsNew extends Component {
   constructor() {
@@ -19,18 +21,16 @@ class CommentsNew extends Component {
       body: this.state.body,
     };
 
-    try {
-      insert.call(comment, error => {
-        // XXX: clear body value
-        // XXX: handle error
-      });
-    } catch (error) {
+    this.setState({ errors: {} });
+    callMethod(insert, comment, error => {
       if (error instanceof ValidationError) {
-        this.setState(error.errors);
+        this.setState({ errors: error.errors });
+      } else if (error) {
+        Errors.throw(error.message);
       } else {
-        throw error;
+        this.setState({ body: null });
       }
-    }
+    });
   }
   onBodyChange(event) {
     this.setState({ body: event.target.value });
