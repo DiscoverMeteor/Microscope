@@ -16,10 +16,28 @@ FlowRouter.route('/', {
 });
 
 FlowRouter.route('/posts/:_id', {
-  name: 'postPage',
+  name: 'posts.show',
   action() {
     mount(App, {
       main: () => <PostsShowPage />,
+    });
+  },
+});
+
+FlowRouter.route('/posts/:_id/edit', {
+  name: 'posts.edit',
+  action() {
+    mount(App, {
+      main: () => <PostsEditPage />,
+    });
+  },
+});
+
+FlowRouter.route('/submit', {
+  name: 'posts.new',
+  action() {
+    mount(App, {
+      main: () => <PostsNewPage />,
     });
   },
 });
