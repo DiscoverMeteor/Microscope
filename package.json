@@ -1,0 +1,33 @@
+{
+  "name": "microscope",
+  "description": "The Discover Meteor book's example app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "meteor test --driver-package practicalmeteor:mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/discovermeteor/microscope.git"
+  },
+  "author": "Tom Coleman and Sacha Greif",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/discovermeteor/microscope/issues"
+  },
+  "homepage": "https://github.com/discovermeteor/microscope#readme",
+  "dependencies": {
+    "classnames": "^2.2.3",
+    "react": "^0.14.7",
+    "react-addons-pure-render-mixin": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-mounter": "^1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^2.3.0",
+    "eslint-config-airbnb": "^6.0.2",
+    "eslint-plugin-react": "^4.1.0"
+  },
+  "eslintConfig": {
+    "extends": "airbnb"
+  }
+}
