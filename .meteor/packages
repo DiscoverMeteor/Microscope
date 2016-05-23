@@ -26,4 +26,5 @@ ian:accounts-ui-bootstrap-3
 check
 audit-argument-checks
 session
-tmeasday:errors
+tmeasday:errors@2.0.0
+

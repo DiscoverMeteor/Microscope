@@ -85,7 +85,7 @@ standard-minifier-js@1.0.6
 stylus@2.511.5
 templating@1.1.9
 templating-tools@1.0.4
-tmeasday:errors@1.0.0
+tmeasday:errors@2.0.0
 tracker@1.0.13
 twbs:bootstrap@3.3.6
 ui@1.0.11
