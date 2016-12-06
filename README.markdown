@@ -22,13 +22,3 @@ Also, note that as the book focuses on _development_, all CSS is committed in a 
 ### Branches
 
 There are 2 branches in this repository which correspond to advanced code that is covered in sidebars of the book, and outside of the main code progression. They are tagged `sidebarX-Y`, corresponding to the sidebar number in the book.
-
-### Developing on Nitrous.IO
-
-Start hacking on this app on
-[Nitrous.IO](https://www.nitrous.io/?utm_source=github.com&utm_campaign=Microscope&utm_medium=hackonnitrous)
-in seconds:
-
-[![Hack DiscoverMeteor/Microscope on
-Nitrous.IO](https://d3o0mnbgv6k92a.cloudfront.net/assets/hack-l-v1-3cc067e71372f6045e1949af9d96095b.png)](https://www.nitrous.io/hack_button?source=embed&runtime=nodejs&repo=DiscoverMeteor%2FMicroscope&file_to_open=README.nitrous.md)
-
